@@ -14,7 +14,7 @@ export class Calculator extends Component {
                 <ControlPanel />
                 <Digits />
                 <Operators />
-                < />
+                <History />
             </main>
         )
     }
