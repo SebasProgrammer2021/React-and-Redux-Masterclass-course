@@ -1,4 +1,7 @@
-import React from "react"
+import React, { Component } from "react"
+import Button from '../Button';
+import store from '../../store';
+import ee from '../../eventEmitter'
 
 export class History extends Component {
     constructor(props) {
