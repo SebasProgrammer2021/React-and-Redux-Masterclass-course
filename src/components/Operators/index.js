@@ -1,22 +1,21 @@
 import React from "react";
 import store from '../../store';
 import Button from '../Button';
+import { updateExpression } from "../../actions/expression";
 
 export const Operators = () => {
     return (
         <section className="buttons--operators">
             {["+", "-", "*", "/"]
                 .map((op, i) => (
-                    <Button key={i} text={op} clickHandler={opHandler} />)
+                    <Button key={i} text={op} clickHandler={operatorsHandler} />)
                 )}
             <Button text="=" clickHandler={calculateExpression} />
         </section>
     )
 }
 
-export const opHandler = (type) => {
-    store.newExpression = `${store.curExpression} ${type} `;
-}
+export const operatorsHandler = (type) => updateExpression(`${store.getState().curExpression} ${type} `);
 
 export const calculateExpression = () => {
     /* eslint-disable */

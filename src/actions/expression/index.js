@@ -2,10 +2,14 @@ import store from "../../store";
 export const EXPRESSION_UPDATE_ACTION = 'EXPRESSION_UPDATE_ACTION';
 export const NEW_EXPRESSION_KEY = 'NEW_EXPRESSION_KEY';
 
-export const updateExpression = newExp => store.dispatch({
-    type: EXPRESSION_UPDATE_ACTION,
-    payload: { [NEW_EXPRESSION_KEY]: newExp }
-})
+export const updateExpression = newExp => {
+    console.log("🚀 ~ file: index.js:6 ~ updateExpression ~ newExp:", newExp)
+
+    return store.dispatch({
+        type: EXPRESSION_UPDATE_ACTION,
+        payload: { [NEW_EXPRESSION_KEY]: newExp }
+    });
+}
 
 export const expressionReducer = (state = 0, { type, payload }) => {
     switch (type) {
